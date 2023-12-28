@@ -1,0 +1,31 @@
+class Armstrong
+{
+Public static void main(String[] args)
+{
+int num=153;
+int count=0;
+int sum=0;
+while(num>0)
+{
+count++;
+num/=10;
+}
+int temp=num;
+while(num>0)
+{
+int rem=num%10;
+}
+int power=1;
+for(int i=1;i<=num;i++){
+pow=power*rem;
+}
+sum=sum+power;
+num/=10;
+}
+if(temp==num)
+{
+system.out.println("Armstrong);
+}
+else
+{
+system.out.println("Not an armstrong");
