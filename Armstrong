@@ -1,31 +1,53 @@
-class Armstrong
-{
-Public static void main(String[] args)
-{
-int num=153;
-int count=0;
-int sum=0;
-while(num>0)
-{
-count++;
-num/=10;
+import java.util.Scanner;
+
+public class Armstrong {
+
+	public static void main(String[] args) {
+		Scanner scn=new Scanner(System.in);
+		System.out.println("Enter a end range: ");
+
+		int end=scn.nextInt();
+		System.out.println("Enter a start range: ");
+
+		int start=scn.nextInt();
+		int length=0;
+		for(int i=end;i>=start;i--)
+		{
+           int sum=0;
+			int num=i;
+			int count=0;
+			
+			while(num>0)
+			{
+				count++;
+				num/=10;
+				
+			}
+			
+		 num=i;
+		
+			while(num>0)
+			{
+				int rem=num%10;
+			    int power=1;
+			for(int j=1;j<=count;j++)
+			{
+		        power=power*rem;
+			}
+			
+			sum=sum+power;
+			num/=10;
+			}
+		num=i;
+			if(sum==num)
+			{
+			 length++;
+				 if(length>=4)
+				 {
+					 System.out.println(num);
+				}
+			}
+			}
+	}
 }
-int temp=num;
-while(num>0)
-{
-int rem=num%10;
-}
-int power=1;
-for(int i=1;i<=num;i++){
-pow=power*rem;
-}
-sum=sum+power;
-num/=10;
-}
-if(temp==num)
-{
-system.out.println("Armstrong);
-}
-else
-{
-system.out.println("Not an armstrong");
+
