@@ -1,31 +1,14 @@
-import java.util.Scanner;
-class Leapyear 
-{
-	public static void main(String[] args) 
+Class Prime
 	{
-		Scanner scn=new Scanner(System.in);
-		System.out.println("Enter a number");
-		int year = scn.nextInt();
-		if(year%100!=0)
+	Public static void main(String[] args){
+		int a=200;
+		if(a%4==0 && a%100!=0){
+			system.out.println("Not a leap year");
+			else if(a%400==0){
+			sysyem.out.println("leap year");
 			else{
-				System.out.println("Not a leap year");
-			}
-			if(year%4==0)
-				else{
-					System.out.println("leap year");
-			}
-					if(year%400==0){
-						System.out.println("leap year");
-				}
-				else{
-					System.out.println("Not a leap year");
-			}
-		   
-		
-		
-		
-
-
-
+			system.out.println("Not a lepa year");
+		}
 	}
 }
+			
