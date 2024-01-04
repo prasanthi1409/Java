@@ -1,7 +1,8 @@
-class  A
+
+interface A
 {
-     public static void main(String[] args)
-     {
-          System.out.println("A Class Is Executing");
-     }
+	String m1();
 }
+	
+
+
