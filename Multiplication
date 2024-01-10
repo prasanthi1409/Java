@@ -1,0 +1,16 @@
+public class Sum {
+	public static void main(String[] args) {
+		int mul=1;
+		String s="";
+		int n=7;
+		for(int i=1;i<=n;i++)
+		{
+			mul*=i;
+			s=s+i;
+			if(i<n) s=s+"*";
+			
+		}
+		System.out.println(s+"="+mul);
+	}
+
+}
