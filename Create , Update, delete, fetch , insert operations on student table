@@ -1,0 +1,80 @@
+public class Createtable {
+
+	public static void main(String[] args) throws SQLException {
+		Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/university","root","root");
+		Statement st=con.createStatement();
+		st.execute("create table student(id int,name varchar(20),age int)");
+		System.out.println("table created successfully");
+
+	}
+
+}
+public class Insertdata {
+
+	public static void main(String[] args) throws ClassNotFoundException, SQLException {
+		Class.forName("com.mysql.cj.jdbc.Driver");
+		Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/university","root","root");
+		Statement st=con.createStatement();
+		st.execute("insert into student(id,name,age) values(1,'A',20)");
+		st.execute("insert into student(id,name,age) values(2,'B',20)");
+		st.execute("insert into student(id,name,age) values(3,'C',20)");
+		System.out.println("values inserted successfully");
+
+	}
+
+}
+public class Updatedata {
+
+	public static void main(String[] args) throws ClassNotFoundException, SQLException {
+		Class.forName("com.mysql.cj.jdbc.Driver");
+		Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/university","root","root");
+		Statement st=con.createStatement();
+		st.execute("update student set name='AB' where id=2");
+		System.out.println("updated successfully");
+
+	}
+
+}
+public class Fetchdata {
+
+	public static void main(String[] args) throws SQLException {
+		Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/university","root","root");
+		Statement st=con.createStatement();
+		ResultSet r=st.executeQuery("select * from student where id=1");
+		boolean b=r.next();
+		System.out.println(b);
+		System.out.println(r.getInt(1));
+		System.out.println(r.getString(2));
+		System.out.println(r.getInt(3));
+	
+
+
+	}
+
+}
+public class Fetchalldata {
+
+	public static void main(String[] args) throws SQLException {
+		Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/university","root","root");
+		Statement st=con.createStatement();
+		ResultSet r=st.executeQuery("select * from student");
+		while(r.next())
+		{
+			System.out.println(r.getInt(1));
+			System.out.println(r.getString(2));
+			System.out.println(r.getInt(3));
+			System.out.println("---------------------");
+		}
+	}
+
+}
+public class Deletedata {
+
+	public static void main(String[] args) throws SQLException {
+		Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/university","root","root");
+		Statement st=con.createStatement();
+		st.execute("delete from student where id=3");
+		System.out.println("deleted successfully");
+	}
+
+}
