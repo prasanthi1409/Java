@@ -1,0 +1,14 @@
+public class Batchprocessing {
+
+	public static void main(String[] args) throws SQLException {
+		Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/university","root","root");
+		Statement st=con.createStatement();
+		st.addBatch("insert into employee(id,name,role,yoe,salary) values(1,'Dinga','Trainee',3,20000)");
+		st.addBatch("insert into employee(id,name,role,yoe,salary) values(2,'Hinga','Assoicate',4,30000)");
+		st.addBatch("insert into employee(id,name,role,yoe,salary) values(1,'pinga','Assistant',5,40000)");
+		st.addBatch("insert into employee(id,name,role,yoe,salary) values(1,'binga','Manager',6,50000)");
+		st.executeBatch();
+		System.out.println("batch executed successfully");
+	}
+
+}
